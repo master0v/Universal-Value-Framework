@@ -1,3 +1,8 @@
+# Mac files
+.DS_Store
+
+# Below is automatic suggection for TeX from github
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
