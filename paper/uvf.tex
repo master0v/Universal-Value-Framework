@@ -1,5 +1,13 @@
+% !TEX TS-program = pdflatexmk
+% ^^^ run pdflatexmk instead of the default pdflatex in order to avoid
+% running ⌘ + [Shift] + B and ⌘ + T multiple times
 % https://github.com/master0v/Universal-Value-Framework
 \documentclass{article} % letter, report, book, memoir
+
+% Import Figure/Image Pakcage
+\usepackage{graphicx}
+% Import package for citetations with page numbers
+\usepackage{apacite}
 
 % PREAMBLE
 \author{Alexei Masterov}
@@ -15,22 +23,46 @@
 \begin{abstract}
 Universal Value Framework is an attempt at quantifying and giving a rigorous mathematical definition to the human ethical values.
 \end{abstract}
-
+\tableofcontents
 \newpage
 \section{Introduction}
 
 \section{Methods}\label{sec:methods}
-\subsection{Procedure}
+\subsection{Procedure} 
 \subsubsection{test}
 
 Hello world\\
-2 backslashes do new line
+2 backslashes do new line\\
 
-Please see section \ref{sec:methods} % run twice in order to make cross-references work
+Please see section \ref{sec:methods}\\ % run twice in order to make cross-references work
+Please see figure \ref{fig:venn}
 
-and new line adds a new paragraph\cite{Schulz:2010vk}
+% Venn diagram of uvf in relation to other disciplines
+\begin{figure}[!h] % !=overrides latex: h=here t=top b=bottom p=special page
+ \begin{center}
+  \includegraphics[width=0.8\textwidth]{uvf_venn.png}
+  \caption{Venn diagram of how I see this fitting into the rest of the research}
+  \label{fig:venn}
+ \end{center}
+\end{figure}
+
+“Very simple — just ask yourself, ‘Can it suffer?’” \citeA[p.~190]{Harari:wg}\\
+
+Value Loading Problem \citeA[p.~190]{Bostrom:wc}
+
+and new line adds a new paragraph\\
+
+\cite{Schulz:2010vk} found something interesting\\
 % comments don't get added
 
-\bibliographystyle{plain} % acm, ieeetr, apalike, ...
-\bibliography{uvf.bib} % run Bibtex in order to generate .bbl (Typeset → Bibtex or ⌘ + [Shift] + B)
+% table
+\begin{tabular}{l|c|c}
+Subject  &  Age     & Gender\\
+\hline
+A & 20 & Male\\
+B & 22 & Female\\
+\end{tabular}
+
+\bibliographystyle{apacite} % plain, acm, ieeetr, apalike, ...
+\bibliography{uvf.bib} % run Bibtex in order to generate .bbl (Typeset → Bibtex or ⌘ + [Shift] + B) or latexmk
 \end{document}
